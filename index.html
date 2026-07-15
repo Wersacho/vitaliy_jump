@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ВИТАЛИЙ ВВЕРХ — пиксельный прыгатель</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="stage">
+  <div id="game-frame">
+
+    <canvas id="gameCanvas" width="400" height="700"></canvas>
+
+    <!-- HUD: score / record / items -->
+    <div id="hud">
+      <div class="hud-panel" id="hud-score">Результат: <span id="scoreValue">0</span></div>
+      <div class="hud-panel" id="hud-record">Рекорд: <span id="recordValue">0</span></div>
+      <div class="hud-panel" id="hud-items">
+        <img src="assets/sausage.png" alt="" id="hud-sausage-icon">
+        <span>×<span id="itemsValue">0</span></span>
+      </div>
+    </div>
+
+    <!-- Touch controls for mobile -->
+    <div id="touch-controls">
+      <div id="touch-left" class="touch-zone" aria-label="Влево"></div>
+      <div id="touch-right" class="touch-zone" aria-label="Вправо"></div>
+    </div>
+
+    <!-- Start screen -->
+    <div id="start-screen" class="overlay-screen">
+      <div class="panel start-panel">
+        <h1 class="pixel-title">ВИТАЛИЙ<br>ВВЕРХ</h1>
+        <p class="pixel-text">Прыгай по облакам всё выше!<br>Собирай продукты с «Окраины».</p>
+        <button id="startBtn" class="pixel-btn">НАЧАТЬ ИГРУ</button>
+        <p class="pixel-hint">Управление: ← → или A / D</p>
+        <p id="loadingText" class="pixel-hint">Загрузка ресурсов...</p>
+      </div>
+    </div>
+
+    <!-- Item info modal -->
+    <div id="item-modal" class="overlay-screen hidden">
+      <div class="panel item-panel">
+        <h2 id="itemTitle" class="pixel-title item-title"></h2>
+        <div class="item-image-frame">
+          <img id="itemImage" src="" alt="">
+        </div>
+        <p id="itemDesc" class="pixel-text item-desc"></p>
+        <button id="continueBtn" class="pixel-btn">ПРОДОЛЖИТЬ</button>
+      </div>
+    </div>
+
+    <!-- Game over screen -->
+    <div id="gameover-screen" class="overlay-screen hidden">
+      <div class="panel gameover-panel">
+        <h1 class="pixel-title">ИГРА<br>ОКОНЧЕНА</h1>
+        <p class="pixel-text final-score">Результат: <span id="finalScore">0</span></p>
+        <p class="pixel-text final-record">Рекорд: <span id="finalRecord">0</span></p>
+        <p id="newRecordBadge" class="pixel-text new-record hidden">НОВЫЙ РЕКОРД!</p>
+        <button id="restartBtn" class="pixel-btn">ИГРАТЬ СНОВА</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
